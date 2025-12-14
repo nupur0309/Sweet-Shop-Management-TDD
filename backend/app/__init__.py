@@ -28,8 +28,10 @@ def create_app(test_config=None):
     
     from app.routes.auth import auth_bp
     from app.routes.sweets import sweet_bp
+    from app.routes.inventory import inventory_bp
 
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(sweet_bp, url_prefix="/api/sweets")
-    
+    app.register_blueprint(inventory_bp, url_prefix="/api/inventory")
+
     return app
