@@ -1,4 +1,4 @@
-# 🍬 Sweet Shop Management System
+#  Sweet Shop Management System
 
 
 The **Sweet Shop Management System** is a full-stack web application built to streamline inventory control, user authentication, and day-to-day operations of a sweet shop. The platform supports both customers and administrators with role-based access, real-time inventory updates, and a modern user interface.
