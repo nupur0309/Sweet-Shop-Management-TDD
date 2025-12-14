@@ -116,4 +116,17 @@ def test_restock_sweet_admin(client, admin_token):
         
         # Check quantity was increased
         updated_sweet = db.session.get(Sweet, sweet.id)
-        assert updated_sweet.quantity == initial_quantity + 1
+        assert updated_sweet.quantity == initial_quantity + 
+        
+def test_restock_sweet_non_admin(client, user_token):
+    with client.application.app_context():
+        sweet = db.session.execute(db.select(Sweet)).scalars().first()
+        
+        # Using /api/inventory to match blueprint registration
+        response = client.post(
+            f"/api/inventory/{sweet.id}/restock", 
+            headers={"Authorization": f"Bearer {user_token}"}
+        )
+        
+        assert response.status_code == 403
+        assert response.get_json()["msg"] == "Admin only"
