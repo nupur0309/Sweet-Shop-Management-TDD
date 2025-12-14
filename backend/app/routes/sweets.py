@@ -25,7 +25,7 @@ def add_sweet():
         )
         db.session.add(sweet)
         db.session.commit()
-        return jsonify(message="Sweet added successfully"), 201
+        return jsonify(message="Sweet added successfully", id=sweet.id), 201
     except Exception as e:
         db.session.rollback()
         return jsonify(msg="Failed to add sweet"), 500
@@ -78,3 +78,32 @@ def search_sweets():
             for s in results
         ]
     )
+
+@sweet_bp.route("/<int:id>", methods=["PUT"])
+@jwt_required()
+def update_sweet(id):
+    sweet = db.get_or_404(Sweet, id)
+    data = request.get_json()
+
+    try:
+        for key, value in data.items():
+            if key in ["price"]:
+                value = float(value)
+            elif key in ["quantity"]:
+                value = int(value)
+            setattr(sweet, key, value)
+
+        db.session.commit()
+        return jsonify(
+            message="Sweet updated",
+            sweet={
+                "id": sweet.id,
+                "name": sweet.name,
+                "category": sweet.category,
+                "price": sweet.price,
+                "quantity": sweet.quantity,
+            },
+        )
+    except Exception as e:
+        db.session.rollback()
+        return jsonify(msg="Failed to update sweet"), 500
