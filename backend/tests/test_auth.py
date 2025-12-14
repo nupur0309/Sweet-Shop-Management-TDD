@@ -38,3 +38,15 @@ def test_register_duplicate(client):
     })
     assert response.status_code == 400
     assert response.get_json()["msg"] == "User already exists"
+
+def test_login_success(client):
+    client.post("/api/auth/register", json={
+        "username": "testuser",
+        "password": "testpass"
+    })
+    response = client.post("/api/auth/login", json={
+        "username": "testuser",
+        "password": "testpass"
+    })
+    assert response.status_code == 200
+    assert "access_token" in response.get_json()
