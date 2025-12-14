@@ -7,3 +7,7 @@ def create_sweet(data):
     db.session.add(sweet)
     db.session.commit()
     return sweet
+
+def get_all_sweets():
+    return Sweet.query.all()
+
