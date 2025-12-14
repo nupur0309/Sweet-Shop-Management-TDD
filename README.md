@@ -54,28 +54,6 @@ This application enables customers to browse and purchase sweets while allowing 
 
 ---
 
-## ⚙️ Tech Stack
-
-### Frontend
-
-* React.js (Functional Components)
-* React Router
-* Tailwind CSS
-* Context API
-* Axios
-* Vite
-
-### Backend
-
-* Flask (Blueprint-based architecture)
-* SQLAlchemy ORM
-* Flask-JWT-Extended
-* SQLite (development database)
-* Marshmallow for validation
-* Flask-CORS & python-dotenv
-
----
-
 ## 🗂 Project Structure
 
 ```bash
@@ -235,11 +213,15 @@ Frontend tests use **Vitest** for mocking and unit testing.
 
 | Login Page | Registration Page |
 |:---:|:---:|
-| ![Login Page](screenshots/login_welcome.png) | ![Registration Page](screenshots/register.png) |
+| ![Login Page](screenshots/login.png) | ![Registration Page](screenshots/register.png) |
 
-| Dashboard & Sweet List | Purchase Success Notification |
+| Dashboard & Sweet List (User) | Purchase Success Notification |
 |:---:|:---:|
 | ![Dashboard](screenshots/dashboard.png) | ![Purchase Success](screenshots/purchase_success.png) |
+
+| Admin Dashboard | Sweet Added |
+|:---:|:---:|
+| ![Admin Dashboard](screenshots/admin.png) | ![Sweet_Adde](screenshots/sweet_added.png) |
 
 ---
 
@@ -250,6 +232,24 @@ Frontend tests use **Vitest** for mocking and unit testing.
 * **ChatGPT**
 * **GitHub Copilot**
 * **Antigravity AI**
+
+### How I Used AI Tools
+
+#### ChatGPT
+* Planned backend architecture and API design
+* Clarified Flask Blueprint structure and JWT authentication
+* Assisted in debugging database and authentication issues
+* Helped improve testing strategies
+
+#### GitHub Copilot
+* Assisted in writing unit and integration tests
+* Reduced repetitive coding tasks
+
+#### Antigravity AI
+* Brainstormed feature improvements and edge cases
+* Reviewed test completeness and error handling
+* Suggested refactoring opportunities
+* Improved documentation clarity
 
 ---
 
