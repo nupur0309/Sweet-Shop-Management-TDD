@@ -59,3 +59,62 @@ describe('API Services', () => {
         })
     })
 })
+
+describe('Sweets API', () => {
+    it('should fetch all sweets', async () => {
+        const mockSweets = [
+            { id: 1, name: 'Chocolate Truffle', category: 'Chocolate', price: 2.50, quantity: 50 }
+        ]
+        sweetsAPI.getAllSweets.mockResolvedValue(mockSweets)
+
+        const result = await sweetsAPI.getAllSweets()
+
+        expect(sweetsAPI.getAllSweets).toHaveBeenCalled()
+        expect(result).toEqual(mockSweets)
+    })
+
+    it('should search sweets with filters', async () => {
+        const filters = { search: 'chocolate', category: 'Chocolate', price_min: 1, price_max: 5 }
+        const mockResponse = [{ id: 1, name: 'Chocolate Truffle' }]
+        sweetsAPI.searchSweets.mockResolvedValue(mockResponse)
+
+        const result = await sweetsAPI.searchSweets(filters)
+
+        expect(sweetsAPI.searchSweets).toHaveBeenCalledWith(filters)
+        expect(result).toEqual(mockResponse)
+    })
+
+    it('should add a new sweet', async () => {
+        const sweetData = { name: 'New Sweet', category: 'Candy', price: 1.50, quantity: 100 }
+        const mockResponse = { message: 'Sweet added successfully' }
+        sweetsAPI.addSweet.mockResolvedValue(mockResponse)
+
+        const result = await sweetsAPI.addSweet(sweetData)
+
+        expect(sweetsAPI.addSweet).toHaveBeenCalledWith(sweetData)
+        expect(result).toEqual(mockResponse)
+    })
+
+    it('should update a sweet', async () => {
+        const sweetId = 1
+        const updateData = { price: 3.00, quantity: 75 }
+        const mockResponse = { message: 'Sweet updated' }
+        sweetsAPI.updateSweet.mockResolvedValue(mockResponse)
+
+        const result = await sweetsAPI.updateSweet(sweetId, updateData)
+
+        expect(sweetsAPI.updateSweet).toHaveBeenCalledWith(sweetId, updateData)
+        expect(result).toEqual(mockResponse)
+    })
+
+    it('should delete a sweet', async () => {
+        const sweetId = 1
+        const mockResponse = { message: 'Sweet deleted successfully' }
+        sweetsAPI.deleteSweet.mockResolvedValue(mockResponse)
+
+        const result = await sweetsAPI.deleteSweet(sweetId)
+
+        expect(sweetsAPI.deleteSweet).toHaveBeenCalledWith(sweetId)
+        expect(result).toEqual(mockResponse)
+    })
+})
