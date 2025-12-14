@@ -178,11 +178,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-primary-400 to-secondary-400 rounded-full;
+    background-image: linear-gradient(to bottom, #f472b6, #fb923c);
+    @apply rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    @apply from-primary-500 to-secondary-500;
+    background-image: linear-gradient(to bottom, #ec4899, #f97316);
 }
 
 /* Particle effects */
