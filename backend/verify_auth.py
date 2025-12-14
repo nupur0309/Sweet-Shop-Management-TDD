@@ -22,6 +22,21 @@ def test_auth():
             print("Registration FAILED")
             sys.exit(1)
 
+        # Login
+        print("\nTesting Login...")
+        login_data = {
+            "username": "test_user_new_1",
+            "password": "password123"
+        }
+        resp = requests.post(f"{BASE_URL}/login", json=login_data)
+        print(f"Login Status: {resp.status_code}")
+        print(f"Login Response: {resp.json()}")
+
+        if resp.status_code == 200 and "access_token" in resp.json():
+            print("Login SUCCESS")
+        else:
+            print("Login FAILED")
+            sys.exit(1)
 
     except Exception as e:
         print(f"Error: {e}")
