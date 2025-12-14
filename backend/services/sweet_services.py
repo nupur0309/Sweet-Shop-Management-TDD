@@ -23,3 +23,14 @@ def search_sweets(name=None, category=None, price_min=None, price_max=None):
         query = query.filter(Sweet.price <= float(price_max))
     return query.all()
 
+def update_sweet(sweet_id, data):
+    sweet = Sweet.query.get_or_404(sweet_id)
+    for key, value in data.items():
+        setattr(sweet, key, value)
+    db.session.commit()
+    return sweet
+
+def delete_sweet(sweet_id):
+    sweet = Sweet.query.get_or_404(sweet_id)
+    db.session.delete(sweet)
+    db.session.commit()

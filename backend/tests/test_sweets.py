@@ -99,7 +99,8 @@ def test_delete_sweet(client, auth_headers):
     assert add_response.status_code == 201
     
     # Delete the sweet
-    delete_response = client.delete("/api/sweets/1", headers=auth_headers)
+    sweet_id = add_response.get_json()["id"]
+    delete_response = client.delete(f"/api/sweets/{sweet_id}", headers=auth_headers)
     print(f"Delete response status: {delete_response.status_code}")
     print(f"Delete response data: {delete_response.get_json()}")
     assert delete_response.status_code == 200
