@@ -49,7 +49,7 @@ const Login = () => {
                     <h2 className="text-4xl font-bold text-gradient mb-3">
                         {location.state?.justRegistered && location.state?.username
                             ? `Welcome ${location.state.username}`
-                            : 'Welcome Back'}
+                            : 'Welcome'}
                     </h2>
                     <p className="text-gray-700 text-lg font-medium">
                         Sign in to your Sweet Shop account
