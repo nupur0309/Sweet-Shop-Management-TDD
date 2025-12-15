@@ -116,7 +116,7 @@ def test_restock_sweet_admin(client, admin_token):
         
         # Check quantity was increased
         updated_sweet = db.session.get(Sweet, sweet.id)
-        assert updated_sweet.quantity == initial_quantity + 
+        assert updated_sweet.quantity == initial_quantity + 1
         
 def test_restock_sweet_non_admin(client, user_token):
     with client.application.app_context():
