@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # 🍬 Sweet Shop Management System
+=======
+#  Sweet Shop Management System
+>>>>>>> ca3d06f3c038e9b8573891f842b337ddcb603c5a
 
 
 The **Sweet Shop Management System** is a full-stack web application built to streamline inventory control, user authentication, and day-to-day operations of a sweet shop. The platform supports both customers and administrators with role-based access, real-time inventory updates, and a modern user interface.
@@ -219,9 +223,15 @@ Frontend tests use **Vitest** for mocking and unit testing.
 |:---:|:---:|
 | ![Dashboard](screenshots/dashboard.png) | ![Purchase Success](screenshots/purchase_success.png) |
 
+<<<<<<< HEAD
 | Admin Dashboard |
 |:---:|
 | ![Admin Dashboard](screenshots/admin.png) |![Dashboard](screenshots/sweet_added.png)|
+=======
+| Admin Dashboard | Sweet Added |
+|:---:|:---:|
+| ![Admin Dashboard](screenshots/admin.png) | ![Sweet_Adde](screenshots/sweet_added.png) |
+>>>>>>> ca3d06f3c038e9b8573891f842b337ddcb603c5a
 
 ---
 
