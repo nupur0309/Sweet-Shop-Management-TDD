@@ -213,7 +213,7 @@ Frontend tests use **Vitest** for mocking and unit testing.
 
 | Login Page | Registration Page |
 |:---:|:---:|
-| ![Login Page](screenshots/login_welcome.png) | ![Registration Page](screenshots/register.png) |
+| ![Login Page](screenshots/login.png) | ![Registration Page](screenshots/register.png) |
 
 | Dashboard & Sweet List (User) | Purchase Success Notification |
 |:---:|:---:|
@@ -221,7 +221,7 @@ Frontend tests use **Vitest** for mocking and unit testing.
 
 | Admin Dashboard |
 |:---:|
-| ![Admin Dashboard](screenshots/admin_dashboard.png) |
+| ![Admin Dashboard](screenshots/admin.png) |![Dashboard](screenshots/sweet_added.png)|
 
 ---
 
@@ -242,8 +242,6 @@ Frontend tests use **Vitest** for mocking and unit testing.
 * Helped improve testing strategies
 
 #### GitHub Copilot
-* Generated boilerplate React components and hooks
-* Suggested SQLAlchemy models and service logic
 * Assisted in writing unit and integration tests
 * Reduced repetitive coding tasks
 
